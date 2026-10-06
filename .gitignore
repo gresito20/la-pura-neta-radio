@@ -9,6 +9,7 @@ yarn-error.log*
 *.aab
 *.zip
 dist/
+WEB LA ULTRA*
 
 # Android
 .gradle/
