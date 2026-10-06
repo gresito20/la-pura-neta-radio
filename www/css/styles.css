@@ -1,0 +1,522 @@
+/* ==========================================================================
+   LA PURA NETA RADIO - STREAMING NATIVE APP THEME (Light & Dark Mode)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --color-primary: #E60012;
+  --color-primary-hover: #cc0010;
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  padding-top: var(--sat);
+  padding-bottom: calc(84px + var(--sab)); /* Space for persistent bottom player + safe area */
+  padding-left: var(--sal);
+  padding-right: var(--sar);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Native Mobile Radio Theme styles */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(230, 0, 18, 0.4), 0 0 0 4px rgba(230, 0, 18, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(230, 0, 18, 0.7), 0 0 0 10px rgba(230, 0, 18, 0.35);
+    transform: scale(1.02);
+  }
+}
+
+.glow-active {
+  animation: pulseGlow 2.4s infinite ease-in-out;
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+.ripple-effect {
+  animation: ripple 1.8s infinite ease-out;
+}
+
+.tab-pane {
+  display: none;
+  animation: fadeInTab 0.25s ease-out forwards;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= RADIAL ACTION DIAL MENU (ESTRELLA STYLE) ================= */
+.radial-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radial-satellite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+  z-index: 20;
+}
+
+.radial-open .radial-satellite {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* Satellites fan-out geometry */
+.radial-open .sat-top {
+  transform: translate(-50%, -105px) scale(1);
+}
+
+.radial-open .sat-top-left {
+  transform: translate(calc(-50% - 68px), -72px) scale(1);
+}
+
+.radial-open .sat-top-right {
+  transform: translate(calc(-50% + 68px), -72px) scale(1);
+}
+
+.radial-open .sat-left {
+  transform: translate(calc(-50% - 92px), -10px) scale(1);
+}
+
+.radial-open .sat-right {
+  transform: translate(calc(-50% + 92px), -10px) scale(1);
+}
+
+.radial-halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230, 0, 18, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.3s ease;
+  z-index: 10;
+}
+
+.radial-open .radial-halo {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.rainbow-ring {
+  background: conic-gradient(from 0deg, #ff0055, #ff5500, #ffcc00, #00cc88, #0099ff, #cc00ff, #ff0055);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Range input slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+}
+
+.dark input[type="range"] {
+  background: #27272a;
+}
+
+html:not(.dark) input[type="range"] {
+  background: #cbd5e1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.dark input[type="range"]::-webkit-slider-thumb {
+  background: #ffffff;
+}
+
+html:not(.dark) input[type="range"]::-webkit-slider-thumb {
+  background: #0f172a;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #E60012 !important;
+}
+
+/* Minimalist Equalizer Animation */
+.eq-bar {
+  display: inline-block;
+  width: 3px;
+  background-color: #E60012;
+  border-radius: 1px;
+  transition: height 0.15s ease;
+}
+
+.eq-active .eq-bar:nth-child(1) { animation: barPlay 0.8s infinite ease-in-out; }
+.eq-active .eq-bar:nth-child(2) { animation: barPlay 1.1s infinite ease-in-out 0.2s; }
+.eq-active .eq-bar:nth-child(3) { animation: barPlay 0.7s infinite ease-in-out 0.4s; }
+.eq-active .eq-bar:nth-child(4) { animation: barPlay 1.0s infinite ease-in-out 0.1s; }
+
+@keyframes barPlay {
+  0%, 100% { height: 3px; }
+  50% { height: 16px; }
+}
+
+/* Toast */
+.toast-notification {
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ================= GLASSMORPHISM RADIAL ACTION HUB (INFINITY ECOSYSTEM) ================= */
+.rainbow-ring {
+  position: relative;
+  padding: 3px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 24px rgba(255, 0, 85, 0.4), 0 0 16px rgba(0, 176, 255, 0.35);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.rainbow-ring::before {
+  content: '';
+  position: absolute;
+  inset: -60%;
+  background: conic-gradient(from 0deg, #ff0055, #ff7700, #ffea00, #00e676, #00b0ff, #aa00ff, #ff0055);
+  animation: smoothRadialSweep 8s linear infinite;
+  z-index: 0;
+}
+
+@keyframes smoothRadialSweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rainbow-ring:hover, .radial-container.open .rainbow-ring {
+  box-shadow: 0 0 32px rgba(255, 0, 85, 0.7), 0 0 35px rgba(0, 176, 255, 0.6);
+  transform: scale(1.06);
+}
+
+.radial-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 155px;
+  margin: 6px auto;
+}
+
+/* Glass fan curved backdrop behind satellites (Perfect concentric arch) */
+.radial-fan-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  height: 130px;
+  margin-top: -130px;
+  margin-left: -130px;
+  border-top-left-radius: 130px;
+  border-top-right-radius: 130px;
+  background: radial-gradient(circle at 50% 100%, rgba(230, 0, 18, 0.22) 0%, rgba(25, 25, 35, 0.85) 55%, rgba(10, 10, 15, 0.95) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-bottom: none;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 -12px 35px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  opacity: 0;
+  transform: scale(0.5);
+  transform-origin: 50% 100%;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.radial-container.open .radial-fan-bg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Glassmorphism Satellite Buttons */
+.radial-satellite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  margin-left: -22px;
+  border-radius: 50%;
+  background: rgba(20, 20, 25, 0.88);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(0, 0) scale(0.2);
+  z-index: 20;
+}
+
+.radial-satellite svg {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+}
+
+.radial-satellite:hover svg {
+  transform: scale(1.15);
+}
+
+.radial-satellite:active {
+  transform: scale(0.92) !important;
+}
+
+/* Open positions forming the perfect concentric arch (Radius R = 86px) with smooth subtle hover */
+.radial-container.open .radial-sat-1 {
+  /* Far Left (Social / Redes - Angle ~170°) */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-85px, -15px) scale(1);
+  transition-delay: 0.02s;
+}
+.radial-container.open .radial-sat-1:hover {
+  transform: translate(-85px, -15px) scale(1.08);
+  border-color: rgba(56, 189, 248, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 14px rgba(56, 189, 248, 0.4);
+}
+
+.radial-container.open .radial-sat-2 {
+  /* Top-Left (Instagram - Angle ~130°) */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-55px, -66px) scale(1);
+  transition-delay: 0.05s;
+}
+.radial-container.open .radial-sat-2:hover {
+  transform: translate(-55px, -66px) scale(1.08);
+  border-color: rgba(236, 72, 153, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 14px rgba(236, 72, 153, 0.4);
+}
+
+.radial-container.open .radial-sat-3 {
+  /* Top-Center (WhatsApp Cabina - Angle 90°) */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0px, -86px) scale(1.1);
+  transition-delay: 0.08s;
+}
+.radial-container.open .radial-sat-3:hover {
+  transform: translate(0px, -86px) scale(1.18);
+  border-color: rgba(52, 211, 153, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 16px rgba(52, 211, 153, 0.5);
+}
+
+.radial-container.open .radial-sat-4 {
+  /* Top-Right (Calendar/Horarios - Angle ~50°) */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(55px, -66px) scale(1);
+  transition-delay: 0.11s;
+}
+.radial-container.open .radial-sat-4:hover {
+  transform: translate(55px, -66px) scale(1.08);
+  border-color: rgba(251, 191, 36, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 14px rgba(251, 191, 36, 0.4);
+}
+
+.radial-container.open .radial-sat-5 {
+  /* Far Right (Phone Call - Angle ~10°) */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(85px, -15px) scale(1);
+  transition-delay: 0.14s;
+}
+.radial-container.open .radial-sat-5:hover {
+  transform: translate(85px, -15px) scale(1.08);
+  border-color: rgba(52, 211, 153, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 14px rgba(52, 211, 153, 0.4);
+}
+
+/* Hub Icon Infinity <-> Close Transition */
+.hub-icon-infinity, .hub-icon-close {
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: absolute;
+}
+
+.hub-icon-infinity {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.radial-container.open .hub-icon-infinity {
+  opacity: 0;
+  transform: scale(0.3) rotate(-90deg);
+  pointer-events: none;
+}
+
+.hub-icon-close {
+  opacity: 0;
+  transform: scale(0.3) rotate(90deg);
+}
+
+.radial-container.open .hub-icon-close {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* ================= VERTICAL VOLUME GLASS POPOVER ================= */
+#vertical-vol-popover {
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: bottom center;
+}
+
+#vertical-vol-popover.hidden {
+  display: none !important;
+}
+
+.vertical-slider {
+  -webkit-appearance: slider-vertical;
+  writing-mode: bt-lr;
+  writing-mode: vertical-lr;
+  width: 8px;
+  height: 110px;
+  cursor: pointer;
+  accent-color: #E60012;
+}
+
+/* ================= CINEMATIC ENTRANCE ANIMATION (SPLASH REVEAL) ================= */
+@keyframes entranceLogoPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-entrance-logo {
+  animation: entranceLogoPop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes eqBarPulse {
+  0%, 100% { height: 4px; opacity: 0.5; }
+  50% { height: 20px; opacity: 1; }
+}
+
+.animate-eq-bar-1 { animation: eqBarPulse 0.8s infinite ease-in-out; }
+.animate-eq-bar-2 { animation: eqBarPulse 0.6s infinite ease-in-out 0.1s; }
+.animate-eq-bar-3 { animation: eqBarPulse 0.9s infinite ease-in-out 0.2s; }
+.animate-eq-bar-4 { animation: eqBarPulse 0.7s infinite ease-in-out 0.3s; }
+.animate-eq-bar-5 { animation: eqBarPulse 0.85s infinite ease-in-out 0.15s; }
+
+.entrance-hidden {
+  opacity: 0 !important;
+  transform: scale(1.08) !important;
+  pointer-events: none !important;
+}
+
+
+
+

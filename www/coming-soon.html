@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Primary Meta Tags -->
+  <title>La Pura Neta Radio | Con Pura Música de Calidad</title>
+  <meta name="title" content="La Pura Neta Radio | Con Pura Música de Calidad">
+  <meta name="description" content="🔴 Transmitiendo EN VIVO desde New York para el mundo. Escucha los mejores éxitos del Regional Mexicano en streaming HD 320 kbps. ¡Con pura música de calidad!">
+  <meta name="theme-color" content="#E60012">
+  
+  <!-- Anti-FOUC Theme Script -->
+  <script>
+    if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <!-- Open Graph / WhatsApp / Facebook / iMessage -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.lapuraneta.com/">
+  <meta property="og:site_name" content="La Pura Neta Radio">
+  <meta property="og:title" content="📻 La Pura Neta Radio | Con Pura Música de Calidad 🔥">
+  <meta property="og:description" content="🔴 Transmitiendo EN VIVO desde New York para el mundo. Escucha lo mejor del Regional Mexicano en streaming HD 320 kbps.">
+  <meta property="og:image" content="https://www.lapuraneta.com/assets/images/og-share.jpg">
+  <meta property="og:image:secure_url" content="https://www.lapuraneta.com/assets/images/og-share.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="La Pura Neta Radio - Con Pura Música de Calidad">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.lapuraneta.com/">
+  <meta name="twitter:title" content="📻 La Pura Neta Radio | Con Pura Música de Calidad 🔥">
+  <meta name="twitter:description" content="🔴 Transmitiendo EN VIVO desde New York para el mundo. Escucha lo mejor del Regional Mexicano en streaming HD.">
+  <meta name="twitter:image" content="https://www.lapuraneta.com/assets/images/og-share.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#E60012',
+              redHover: '#cc0010',
+              black: '#000000',
+              zincDark: '#09090b',
+              zincCard: '#18181b',
+              zincBorder: '#27272a'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-black dark:text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between p-4 sm:p-8 transition-colors">
+
+  <!-- ================= TOP THEME TOGGLE ONLY ================= -->
+  <div class="w-full max-w-4xl mx-auto flex justify-end">
+    <button id="theme-toggle-btn" class="p-2 rounded-md bg-white hover:bg-zinc-100 text-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 transition-colors shadow-sm" title="Cambiar modo Claro / Oscuro" aria-label="Cambiar modo Claro / Oscuro">
+      <!-- Sun icon (shown in dark mode) -->
+      <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+      <!-- Moon icon (shown in light mode) -->
+      <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+    </button>
+  </div>
+
+  <!-- ================= MINIMALIST MAIN CARD ================= -->
+  <main class="w-full max-w-xl mx-auto my-auto text-center space-y-8 py-8">
+    
+    <!-- Status Badge -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-semibold shadow-sm">
+      <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+      <span class="text-zinc-700 dark:text-zinc-300 uppercase tracking-wider text-[11px]">Transmitiendo desde NY • Online</span>
+    </div>
+
+    <!-- Official Logo (Adaptive Light / Dark) -->
+    <div class="max-w-xs sm:max-w-sm mx-auto px-2">
+      <img src="assets/images/logo.png" alt="La Pura Neta Radio" class="site-logo w-full h-auto object-contain transition-opacity duration-200">
+    </div>
+
+    <!-- Punchy Text -->
+    <div class="space-y-3">
+      <h1 class="text-2xl sm:text-4xl font-black tracking-tight uppercase leading-tight text-zinc-900 dark:text-white">
+        MUY PRONTO <br>
+        <span class="text-red-600 dark:text-red-500">CON PURA MÚSICA DE CALIDAD</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 max-w-sm mx-auto leading-relaxed">
+        Carín León • Grupo Frontera • Edén Muñoz • Y los mejores éxitos del Regional Mexicano en vivo.
+      </p>
+    </div>
+
+    <!-- Official Promo Slides Carousel (16:9 Full Aspect, No Links) -->
+    <div class="relative w-full max-w-lg mx-auto overflow-hidden rounded-xl bg-black border border-zinc-200 dark:border-zinc-800 shadow-xl group">
+      <div id="cs-slider" class="relative w-full aspect-[16/9] overflow-hidden">
+        <div class="cs-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 z-10 select-none pointer-events-none">
+          <img src="assets/images/slide_whatsappazo.jpg" alt="WhatsAppazo" class="w-full h-full object-contain sm:object-cover">
+        </div>
+        <div class="cs-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 select-none pointer-events-none">
+          <img src="assets/images/slide_calidad.jpg" alt="Música de Calidad" class="w-full h-full object-contain sm:object-cover">
+        </div>
+        <div class="cs-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 select-none pointer-events-none">
+          <img src="assets/images/slide_redes.jpg" alt="Síguenos en Redes" class="w-full h-full object-contain sm:object-cover">
+        </div>
+      </div>
+      <!-- Dots -->
+      <div class="absolute bottom-2.5 inset-x-0 z-20 flex justify-center items-center gap-1.5">
+        <button class="cs-dot w-5 h-1.5 rounded-full bg-red-600 transition-all cursor-pointer" data-index="0" aria-label="Slide 1"></button>
+        <button class="cs-dot w-2 h-1.5 rounded-full bg-white/50 hover:bg-white transition-all cursor-pointer" data-index="1" aria-label="Slide 2"></button>
+        <button class="cs-dot w-2 h-1.5 rounded-full bg-white/50 hover:bg-white transition-all cursor-pointer" data-index="2" aria-label="Slide 3"></button>
+      </div>
+    </div>
+
+    <!-- WhatsAppazo & Socials -->
+    <div class="space-y-4 pt-2 max-w-sm mx-auto">
+      <a href="https://wa.me/13472850530?text=¡Saludos%20a%20La%20Pura%20Neta%20Radio!" target="_blank" 
+        class="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-md bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm active:scale-95">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span>WhatsAppazo: +1 (347) 285-0530</span>
+      </a>
+
+      <!-- Socials @lapuranetaradio -->
+      <div class="flex items-center justify-center gap-3 pt-2 text-zinc-500 dark:text-zinc-400 text-xs">
+        <span class="font-semibold text-zinc-700 dark:text-zinc-300">Síguenos:</span>
+        <a href="https://instagram.com/lapuranetaradio" target="_blank" class="hover:text-red-600 dark:hover:text-red-500 font-medium transition-colors">@lapuranetaradio</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= MINIMAL FOOTER ================= -->
+  <footer class="w-full max-w-4xl mx-auto text-center text-xs text-zinc-500 dark:text-zinc-600 py-4">
+    <p>© 2026 La Pura Neta Radio. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- ================= THEME TOGGLE LOGIC ================= -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+
+    function updateLogoSources(isDark) {
+      const logos = document.querySelectorAll('.site-logo');
+      const logoSrc = isDark ? 'assets/images/logo.png' : 'assets/images/logo_light.png';
+      logos.forEach(logo => {
+        logo.src = logoSrc;
+      });
+    }
+
+    // Initialize logo according to active theme
+    updateLogoSources(document.documentElement.classList.contains('dark'));
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        const willBeDark = !document.documentElement.classList.contains('dark');
+        if (willBeDark) {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        }
+        updateLogoSources(willBeDark);
+      });
+    }
+
+    // ================= COMING SOON SLIDER LOGIC (SMOOTH & RANDOM) =================
+    const csSlides = document.querySelectorAll('.cs-slide');
+    const csDots = document.querySelectorAll('.cs-dot');
+    let csCurrent = 0;
+
+    function showCsSlide(idx) {
+      if (!csSlides.length) return;
+      csCurrent = (idx + csSlides.length) % csSlides.length;
+      csSlides.forEach((slide, i) => {
+        if (i === csCurrent) {
+          slide.classList.remove('opacity-0', 'z-0');
+          slide.classList.add('opacity-100', 'z-10');
+        } else {
+          slide.classList.remove('opacity-100', 'z-10');
+          slide.classList.add('opacity-0', 'z-0');
+        }
+      });
+      csDots.forEach((dot, i) => {
+        if (i === csCurrent) {
+          dot.className = 'cs-dot w-5 h-1.5 rounded-full bg-red-600 transition-all cursor-pointer';
+        } else {
+          dot.className = 'cs-dot w-2 h-1.5 rounded-full bg-white/50 hover:bg-white transition-all cursor-pointer';
+        }
+      });
+    }
+
+    function randomNextCsSlide() {
+      if (csSlides.length <= 1) return;
+      let nextIdx;
+      do {
+        nextIdx = Math.floor(Math.random() * csSlides.length);
+      } while (nextIdx === csCurrent);
+      showCsSlide(nextIdx);
+    }
+
+    csDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showCsSlide(i));
+    });
+
+    setInterval(randomNextCsSlide, 4500);
+  </script>
+  <script src="js/mobile.js"></script>
+</body>
+</html>

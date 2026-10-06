@@ -1,0 +1,25 @@
+{
+  "name": "web-la-ultra-radio",
+  "version": "1.0.0",
+  "description": "Interactive High-End Web Player for LA ULTRA - RADIO ONLINE (Hay niveles de niveles)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "xml2js": "^0.6.2"
+  },
+  "keywords": [
+    "radio",
+    "streaming",
+    "glassmorphism",
+    "web-audio-api",
+    "jazler",
+    "la-ultra"
+  ],
+  "author": "LA ULTRA RADIO ONLINE",
+  "license": "MIT"
+}

@@ -1,0 +1,53 @@
+{
+  "stationName": "La Pura Neta Radio",
+  "slogan": "Transmitiendo EN VIVO • New York",
+  "qualityBadge": "HD AUDIO 320k",
+  "streamUrl": "https://radios.mipanel.stream:6952/",
+  "shoutcastStatsUrl": "https://radios.mipanel.stream:6952/stats?sid=1&json=1",
+  "contact": {
+    "whatsappNumber": "+13472850530",
+    "phoneNumber": "+13472850530",
+    "whatsappMessage": "¡WhatsAppazo en vivo para La Pura Neta Radio!",
+    "instagramUrl": "https://www.instagram.com/lapuranetaradio/",
+    "facebookUrl": "https://www.facebook.com/lapuranetaradio",
+    "tiktokUrl": "https://www.tiktok.com/@lapuranetaradio",
+    "youtubeUrl": "https://www.youtube.com/@lapuranetaradio",
+    "websiteUrl": "https://lapuraneta.com"
+  },
+  "announcements": {
+    "showBanner": false,
+    "bannerText": "🔥 ¡Bienvenidos a la nueva App Oficial de La Pura Neta Radio!",
+    "bannerUrl": "https://lapuraneta.com"
+  },
+  "topSongs": [
+    { "id": 1, "title": "Primera Cita", "artist": "Carín León", "votes": 14205, "trend": "👑 #1", "cover": "assets/images/artist_carin.jpg", "youtubeId": "5jU6tN7lF88", "duration": "3:04" },
+    { "id": 2, "title": "No Se Va", "artist": "Grupo Frontera", "votes": 13940, "trend": "🔥 +2", "cover": "assets/images/artist_norteno.jpg", "youtubeId": "Q1gqH8Y8oXg", "duration": "3:15" },
+    { "id": 3, "title": "Como Quieras Quiero", "artist": "Edén Muñoz", "votes": 12890, "trend": "⭐ Top 3", "cover": "assets/images/artist_carin.jpg", "youtubeId": "8Uj_uOq36qg", "duration": "2:50" },
+    { "id": 4, "title": "Según Quién", "artist": "Carín León & Maluma", "votes": 11520, "trend": "💥 En Ascenso", "cover": "assets/images/artist_carin.jpg", "youtubeId": "qg64f3eN6aY", "duration": "2:55" },
+    { "id": 5, "title": "Un x100to", "artist": "Grupo Frontera & Bad Bunny", "votes": 10430, "trend": "🔥 Hit", "cover": "assets/images/artist_norteno.jpg", "youtubeId": "b_pXNyWc8g4", "duration": "3:14" },
+    { "id": 6, "title": "Chale", "artist": "Edén Muñoz", "votes": 9840, "trend": "❤️ Clásico", "cover": "assets/images/artist_carin.jpg", "youtubeId": "4_M5x5l7h9Y", "duration": "3:12" },
+    { "id": 7, "title": "TULUM", "artist": "Grupo Frontera & Peso Pluma", "votes": 9320, "trend": "🪕 Favorita", "cover": "assets/images/artist_corridos.jpg", "youtubeId": "6E8Jz3L-57A", "duration": "3:29" },
+    { "id": 8, "title": "CCC", "artist": "Edén Muñoz & Michelle Maciel", "votes": 8750, "trend": "📻 En Rotación", "cover": "assets/images/artist_norteno.jpg", "youtubeId": "R5j2V4e1L7Q", "duration": "3:05" },
+    { "id": 9, "title": "Ya No Somos Ni Seremos", "artist": "Christian Nodal", "votes": 8120, "trend": "🚀 Éxito", "cover": "assets/images/hero_concert.jpg", "youtubeId": "1j6fF-9U7X4", "duration": "3:05" },
+    { "id": 10, "title": "Alch Si", "artist": "Carín León & Grupo Frontera", "votes": 7640, "trend": "🔥 Pura Calidad", "cover": "assets/images/artist_carin.jpg", "youtubeId": "L9pW8z4V2kE", "duration": "2:48" }
+  ],
+  "schedule": {
+    "weekday": [
+      { "time": "06:00 AM - 10:00 AM", "title": "El Desmadre Matutino", "hosts": "Don Chepe & La Vale", "desc": "El mejor cotorreo, chistes, noticias virales y los éxitos más prendidos para despertar.", "image": "assets/images/radio_hosts.jpg", "isLive": true },
+      { "time": "10:00 AM - 02:00 PM", "title": "Las Más Perronas del Mediodía", "hosts": "El Compa Beto", "desc": "4 horas de pura banda sinaloense, norteño pesado y los WhatsAppazos con la música que pides al aire.", "image": "assets/images/artist_norteno.jpg", "isLive": false },
+      { "time": "02:00 PM - 07:00 PM", "title": "Tardes Pesadas: Corridos & Sierreño", "hosts": "Checo 'El Patrón'", "desc": "Lo más nuevo del movimiento regional moderno, sierreño fino y entrevistas exclusivas.", "image": "assets/images/artist_corridos.jpg", "isLive": false },
+      { "time": "07:00 PM - 12:00 AM", "title": "Noches de Cantina & Bohemias", "hosts": "Paloma Solís", "desc": "Sierreño romántico, norteñitas de oro y complacencias para los compas.", "image": "assets/images/artist_female.jpg", "isLive": false },
+      { "time": "12:00 AM - 06:00 AM", "title": "La Madrugada Pesada (Sin Cortes)", "hosts": "Transmisión Digital HD", "desc": "6 horas ininterrumpidas con pura música de calidad.", "image": "assets/images/hero_concert.jpg", "isLive": false }
+    ],
+    "saturday": [
+      { "time": "08:00 AM - 12:00 PM", "title": "Calentamiento de Fin de Semana", "hosts": "Don Chepe", "desc": "Cumbias norteñas, huapangos y zapateados para arrancar el sábado.", "image": "assets/images/radio_hosts.jpg", "isLive": false },
+      { "time": "12:00 PM - 06:00 PM", "title": "Top 20 Perronas de la Semana", "hosts": "El Compa Beto", "desc": "El conteo oficial de las 20 canciones más votadas.", "image": "assets/images/artist_carin.jpg", "isLive": false },
+      { "time": "06:00 PM - 02:00 AM", "title": "La Peda Oficial: Mix en Vivo", "hosts": "DJ Fuego & Checo", "desc": "Mezclas de banda y corridos en vivo directo desde cabina.", "image": "assets/images/hero_concert.jpg", "isLive": false }
+    ],
+    "sunday": [
+      { "time": "08:00 AM - 01:00 PM", "title": "Domingos de Cruda y Clásicos", "hosts": "Don Ramón 'El Profe'", "desc": "Puro Ramón Ayala, Tigres del Norte, Invasores de NL y Cadetes de Linares.", "image": "assets/images/artist_norteno.jpg", "isLive": false },
+      { "time": "01:00 PM - 07:00 PM", "title": "Carne Asada & Puro Corrido", "hosts": "El Compa Beto", "desc": "La banda sonora perfecta para el asador familiar con lo mejor del Regional.", "image": "assets/images/artist_corridos.jpg", "isLive": false },
+      { "time": "07:00 PM - 12:00 AM", "title": "Noche Íntima: Bohemias del Alma", "hosts": "Paloma Solís", "desc": "Canciones acústicas, recuerdos y serenatas para cerrar el fin de semana.", "image": "assets/images/artist_female.jpg", "isLive": false }
+    ]
+  }
+}

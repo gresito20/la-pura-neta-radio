@@ -1,0 +1,67 @@
+name: Deploy La Pura Neta Radio a GoDaddy via FTP
+
+# ==============================================================================
+# PIPELINE CI/CD - DESPLIEGUE CONTINUO EN HOSTING COMPARTIDO GODADDY
+# ==============================================================================
+#
+# INSTRUCCIONES PARA CONFIGURAR LOS "SECRETS" EN TU REPOSITORIO DE GITHUB:
+# 1. Ve a tu repositorio en GitHub: Settings -> Secrets and variables -> Actions.
+# 2. Haz clic en "New repository secret" y agrega los siguientes valores:
+#
+#    - FTP_SERVER:
+#        Dirección o IP del servidor FTP de GoDaddy (ej. ftp.tudominio.com o la IP de tu cPanel).
+#
+#    - FTP_USERNAME:
+#        Tu usuario FTP de GoDaddy (ej. tu_usuario@tudominio.com o el usuario principal de cPanel).
+#
+#    - FTP_PASSWORD:
+#        Contraseña de tu cuenta FTP en GoDaddy.
+#
+#    - FTP_PORT (Opcional, default 21):
+#        Puerto de conexión FTP (por defecto es 21 o 22 si usas SFTP).
+#
+#    - SERVER_DIR (Opcional, default "public_html/"):
+#        Ruta de la carpeta raíz de tu sitio en el hosting de GoDaddy.
+#        En la mayoría de hostings de GoDaddy con cPanel la ruta es:
+#        "public_html/" (o "public_html/subcarpeta" si es un subdominio/addon).
+# ==============================================================================
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Permite disparar el despliegue manualmente desde la pestaña Actions en GitHub
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
+
+jobs:
+  web-deploy:
+    name: Despliegue de Producción (FTP)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Clonar código del repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # Optimiza la detección de cambios entre commits
+
+      - name: 🚀 Sincronizar archivos estáticos con GoDaddy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          protocol: ftp # Cambia a 'ftps' si tu hosting de GoDaddy requiere TLS/SSL explícito
+          server-dir: ${{ secrets.SERVER_DIR || 'public_html/' }}
+          local-dir: ./
+          dangerous-clean-slate: false # No borra archivos remotos no relacionados (evita borrar certificados SSL o carpetas del sistema)
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/scratch/**
+            *.md
